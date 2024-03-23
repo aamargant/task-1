@@ -1,15 +1,6 @@
 ---
-- name: Deploy compose
-  connection: local
-  gather_facts: no
-  hosts: myhost
-  tasks:
-    - name: Copy docker compose file
-      copy:
-        src: app/
-        dest: tmp/
-    - name: Deploy Docker Compose stack
-      community.docker.docker_compose_v2:
-        project_src: /tmp
-        files:
-        - docker-compose.yml
+- name: Deploy app
+  hosts: all
+  become: true
+  roles:
+    - application

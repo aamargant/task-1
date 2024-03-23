@@ -18,7 +18,7 @@ services:
     volumes:
       - ~/apps/postgres:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=S3cret
-      - POSTGRES_USER=admin_user
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
       - POSTGRES_DB=admin_db
     
